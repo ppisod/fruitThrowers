@@ -8,6 +8,10 @@ m.EQUIPPED = function (slot: number)
 
 end
 
+m.KNIFE_OUT = function () 
+
+end
+
 m.THROWN = function () 
 
 end
