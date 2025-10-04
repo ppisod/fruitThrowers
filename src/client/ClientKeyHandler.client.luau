@@ -10,7 +10,7 @@ local EquipKeyCodes = require(ReplicatedStorage.Shared.CrossHandling.EquipKeyCod
 local equipEvent = game:GetService("ReplicatedStorage").Events.Equip;
 local throwEvent = game:GetService("ReplicatedStorage").Events.Throw;
 local knifeEvent = game:GetService("ReplicatedStorage").Events.KnifeOut;
--- gui > warns:Await
+-- gui wait for child please
 local mobileButtons = game.Players.LocalPlayer.PlayerGui:WaitForChild("MobileButtons");
 
 -- TODO: mobile safe implementation...... (gui)
