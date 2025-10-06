@@ -52,10 +52,12 @@ CAS:BindActionAtPriority("throw", throw, true, 2, Enum.UserInputType.MouseButton
 local throwButton = CAS:GetButton("throw");
 local knifeOutButton = CAS:GetButton("knifeOut");
 
-throwButton.Parent = mobileButtons.Frame
-knifeOutButton.Parent = mobileButtons.Frame
+if (throwButton ~= nil or knifeOutButton ~= nil) then 
+    throwButton.Parent = mobileButtons.Frame
+    knifeOutButton.Parent = mobileButtons.Frame
 
-throwButton.Position = UDim2.new(0.3, 0, 0.3, 0)
-throwButton.Size = UDim2.new(0, 60, 0, 60)
+    throwButton.Position = UDim2.new(0.3, 0, 0.3, 0)
+    throwButton.Size = UDim2.new(0, 60, 0, 60)
 
-knifeOutButton.Position = UDim2.new(0.5, 0, 0.5, 0)
+    knifeOutButton.Position = UDim2.new(0.5, 0, 0.5, 0)
+end

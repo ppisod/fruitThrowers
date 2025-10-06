@@ -1,0 +1,1 @@
+game.Players.LocalPlayer.CameraMode = Enum.CameraMode.LockFirstPerson;
