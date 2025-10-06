@@ -1,8 +1,5 @@
 local ServerScriptService = game:GetService("ServerScriptService")
 local DeckHandler = require(ServerScriptService.Server.Data.DeckHandler)
-local Fruit = require(ServerScriptService.Server.Data._Ref.Fruit)
-local Knife = require(ServerScriptService.Server.Data._Ref.Knife)
-local Slots = require(ServerScriptService.Server.Data._Ref.Slots)
 
 local p = game.Players
 
