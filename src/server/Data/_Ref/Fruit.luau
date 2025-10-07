@@ -10,4 +10,6 @@ m.FruitModule = {
     [m.Fruits.melon] = melon
 }
 
+m.iterableFruits = {m.Fruits.melon}
+
 return m;
