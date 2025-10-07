@@ -1,3 +1,4 @@
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
 local ServerScriptService = game:GetService("ServerScriptService")
 local melon = require(ServerScriptService.Server.Fruits.Fruit.melon)
 local m = {}
