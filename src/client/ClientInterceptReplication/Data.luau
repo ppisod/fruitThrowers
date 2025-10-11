@@ -24,3 +24,5 @@ m.ServerInitiation = function ()
     error("ServerInitiation [!] Replication failed...")
     end
 end
+
+return m;
