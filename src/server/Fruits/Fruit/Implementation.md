@@ -8,5 +8,7 @@ Every module requires fields/methods:
 
 Then, go to Fruit.luau in server / Data / _Ref and add your fruit as a field in m.Fruits, and add your module. 
 
-Then, add your fruit to m.iterableFruits
+Then, add your fruit to m.iterableFruits  
+Then, go to client/ClientInterceptReplication/Data.luau and add your fruit into CFruits  
+And within the Fruits folder (ClientInterceptReplication) write an Instantiate method and link CFruitModule to it.
 ```
