@@ -1,1 +1,2 @@
-local _data = require(script.Parent.ClientInterceptReplication.Data)
+local data = require(script.Parent.ClientInterceptReplication.Data)
+data.ServerInitiation();
