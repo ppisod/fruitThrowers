@@ -39,6 +39,6 @@ throw.OnServerEvent:Connect(function(player: Player)
         return
     end
 
-    fruitModule.Instantiate(hrp.Position, hrp.CFrame.LookVector)
+    fruitModule.Instantiate(player, hrp.Position, hrp.CFrame.LookVector)
 
 end)
