@@ -13,7 +13,7 @@ RequestEvent.OnServerEvent:Connect(function(a0: Player)
             return
         end
     end
-    task.wait(0.1)
+    task.wait(0.5)
     SendEvent:FireClient(a0, Fruit.Fruits, DeckHandler.deck[a0])
     table.insert(alreadyRequested, a0)
 end)

@@ -4,7 +4,7 @@ local m = {}
 
 m.SFruits = {}
 m.CFruits = {
-    ["melon"] = "Nelon"
+    ["melon"] = "Melon"
 }
 m.CFruitsModules = {
     [m.CFruits.melon] = script.Parent.Fruits.melon
@@ -23,7 +23,9 @@ m.ServerInitiation = function ()
     local Get = game.ReplicatedStorage.Events.GiveData
     Get.OnClientEvent:Connect(function(fruits, deck) 
         m.SFruits = fruits
-        m.CFruits = deck
+        m.CDeck = deck
+        print("Client Deck:")
+        print(m.CDeck)
         if #m.SFruits ~= #m.CFruits then 
             error("ServerInitiation [!] Replication failed... CFruits length not matching!")
         end
