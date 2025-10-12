@@ -21,6 +21,9 @@ m.Instantiate = function ()
     LocalClone.Position = hrp.Position + Vector3.new(0, 3, 0)+ direction
     LocalClone:ApplyImpulse((direction + Vector3.new(0,2,0)) * 100)
 
+    task.wait(0.1)
+    LocalClone:Destroy()
+
     LocalClone.Touched:Connect(function(part: BasePart) 
         if (part.Parent == nil or char == nil) then
             LocalClone:Destroy()

@@ -15,7 +15,6 @@ function m.Instantiate (Player: Player, Position: Vector3, Direction: Vector3)
 
     -- make it fly
     clone:ApplyImpulse((Direction + Vector3.new(0,2,0)) * 100)
-    clone:SetNetworkOwner(Player)
     clone.Touched:Connect(function(part: BasePart) 
         if part.Parent == nil then 
             return
