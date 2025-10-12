@@ -49,6 +49,7 @@ throw.OnServerEvent:Connect(function(player: Player, rotation: Vector3)
         DeckHandler.deck[player][Slot] = {hiddenFruit, Fruit.FruitFills[hiddenFruit]}
         EquippedHandler.set(player, Slot, Fruit.FruitModule[hiddenFruit].EquipCooldown)
         -- ERROR PRONE!
+        print("Reload!")
     end
     if (fruitFill > 0) then
         fruitModule -= 1
