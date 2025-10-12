@@ -37,8 +37,8 @@ end
 function throw (actionName: string, inputState: Enum.UserInputState, inputObject: InputObject)
 
     if inputState == Enum.UserInputState.Begin then
-        throwEvent:FireServer();
-        InterceptKeys.THROWN();
+        throwEvent:FireServer(workspace.CurrentCamera.CFrame.LookVector);
+        InterceptKeys.THROWN(workspace.CurrentCamera.CFrame.LookVector);
     end
 
 end

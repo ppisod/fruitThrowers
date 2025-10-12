@@ -12,7 +12,7 @@ m.KNIFE_OUT = function ()
 
 end
 
-m.THROWN = function () 
+m.THROWN = function (Rotation: Vector3) 
     -- replicate fruit client side
     -- get fruit from slot
 end
