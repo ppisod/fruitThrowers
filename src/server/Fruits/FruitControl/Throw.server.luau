@@ -26,8 +26,8 @@ throw.OnServerEvent:Connect(function(player: Player, rotation: Vector3)
         return
     end
 
-    local fruit = DeckHandler.deck[player][Slot][0]
-    local fruitFill = DeckHandler.deck[player][Slot][1]
+    local fruit = DeckHandler.deck[player][Slot][1]
+    local fruitFill = DeckHandler.deck[player][Slot][2]
 
     local fruitModule = Fruit.FruitModule[fruit]
 
@@ -43,10 +43,12 @@ throw.OnServerEvent:Connect(function(player: Player, rotation: Vector3)
     if (fruitFill - 1 == 0 or fruitFill <= 0) then 
         -- Refill
         local hiddenSelectedSlot = Random.new():NextInteger(5,6)
-        local hiddenFruit = DeckHandler.deck[player][hiddenSelectedSlot][0]
+        local hiddenFruit = DeckHandler.deck[player][hiddenSelectedSlot][1]
         local currentSlot = DeckHandler.deck[player][Slot]
+
         DeckHandler.deck[player][hiddenSelectedSlot] = currentSlot
         DeckHandler.deck[player][Slot] = {hiddenFruit, Fruit.FruitFills[hiddenFruit]}
+        -- cooldown
         EquippedHandler.set(player, Slot, Fruit.FruitModule[hiddenFruit].EquipCooldown)
         -- ERROR PRONE!
         print("Reload!")

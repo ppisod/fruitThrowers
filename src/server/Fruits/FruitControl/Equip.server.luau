@@ -10,7 +10,7 @@ local equip = game.ReplicatedStorage.Events.Equip
 equip.OnServerEvent:Connect(function(p: Player, encodedC: number) -- ! encodedC as Slots.Slot
     -- get slot
     local deck = DeckHandler.deck[p] -- {slot: fruit}
-    local referencingFruit = deck[encodedC]
+    local referencingFruit = deck[encodedC][1]
     local fruitModule = Fruit.FruitModule[referencingFruit]
 
     EquippedHandler.set(p, encodedC, fruitModule.EquipCooldown)
