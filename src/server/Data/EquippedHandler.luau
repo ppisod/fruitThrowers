@@ -20,8 +20,13 @@ m.set = function (player, slot: number, cooldown)
         m.playerEquips[player][m.fieldReady] = true
         return
     end
+    local originalS = slot
     task.spawn(function () 
         wait(cooldown)
+        if (m.playerEquips[player][m.fieldSlot]) ~= originalS then 
+            return
+        end
+        -- checks doen to see if equip was equipped another yah
         m.playerEquips[player][m.fieldReady] = true
     end)
 
