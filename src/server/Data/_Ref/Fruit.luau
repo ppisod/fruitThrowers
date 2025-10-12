@@ -9,6 +9,10 @@ m.FruitModule = {
     [m.Fruits.None] = None
 }
 
+m.FruitFills = {
+    [m.Fruits.None] = 0
+}
+
 m.iterableFruits = {m.Fruits.melon}
 
 return m;
