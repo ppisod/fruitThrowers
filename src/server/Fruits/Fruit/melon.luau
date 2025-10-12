@@ -4,7 +4,7 @@ local Workspace = game:GetService("Workspace")
 local m = {}
 
 m.EquipCooldown = 0.7
-
+-- new commit msg
 function m.Instantiate (Player: Player, Position: Vector3, Direction: Vector3)
     local model = ReplicatedStorage.Models.Watermelon
     local particleEmitter = ReplicatedStorage.ParticleEmitters.WatermelonParticleEmitter
