@@ -1,12 +1,12 @@
-local ServerScriptService = game:GetService("ServerScriptService")
-local melon = require(ServerScriptService.Server.Fruits.Fruit.melon)
+local None = require(script.Parent.Fruits.None)
 local m = {}
 
-m.Fruits = {}
-m.Fruits.melon = "Melon"
+m.Fruits = {
+    None = "unequipped"
+}
 
 m.FruitModule = {
-    [m.Fruits.melon] = melon
+    [m.Fruits.None] = None
 }
 
 m.iterableFruits = {m.Fruits.melon}
