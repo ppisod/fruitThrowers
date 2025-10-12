@@ -7,7 +7,7 @@ local Slots = require(ServerScriptService.Server.Data._Ref.Slots)
 -- trigger dummy code for now
 
 local throw = ReplicatedStorage.Events.Throw
-throw.OnServerEvent:Connect(function(player: Player) 
+throw.OnServerEvent:Connect(function(player: Player, rotation: Vector3) 
     local playerEquip = EquippedHandler.playerEquips[player]
 
     if not playerEquip[EquippedHandler.fieldReady] then
@@ -26,7 +26,8 @@ throw.OnServerEvent:Connect(function(player: Player)
         return
     end
 
-    local fruit = DeckHandler.deck[player][Slot]
+    local fruit = DeckHandler.deck[player][Slot][0]
+    local fruitFill = DeckHandler.deck[player][Slot][1]
 
     local fruitModule = Fruit.FruitModule[fruit]
 
@@ -38,7 +39,20 @@ throw.OnServerEvent:Connect(function(player: Player)
         warn("hrp is nil when trying to throw")
         return
     end
-
-    fruitModule.Instantiate(player, hrp.Position, hrp.CFrame.LookVector)
+    
+    if (fruitFill - 1 == 0 or fruitFill <= 0) then 
+        -- Refill
+        local hiddenSelectedSlot = Random.new():NextInteger(5,6)
+        local hiddenFruit = DeckHandler.deck[player][hiddenSelectedSlot][0]
+        local currentSlot = DeckHandler.deck[player][Slot]
+        DeckHandler.deck[player][hiddenSelectedSlot] = currentSlot
+        DeckHandler.deck[player][Slot] = {hiddenFruit, Fruit.FruitFills[hiddenFruit]}
+        EquippedHandler.set(player, Slot, Fruit.FruitModule[hiddenFruit].EquipCooldown)
+        -- ERROR PRONE!
+    end
+    if (fruitFill > 0) then
+        fruitModule -= 1
+        fruitModule.Instantiate(player, hrp.Position, rotation)
+    end
 
 end)
