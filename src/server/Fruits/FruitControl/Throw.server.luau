@@ -7,7 +7,7 @@ local Slots = require(ServerScriptService.Server.Data._Ref.Slots)
 -- trigger dummy code for now
 
 local throw = ReplicatedStorage.Events.Throw
-throw.OnServerEvent:Connect(function(player: Player, rotation: Vector3) 
+throw.OnServerEvent:Connect(function(player: Player, rotation: Vector3, id: number) 
     local playerEquip = EquippedHandler.playerEquips[player]
 
     if not playerEquip[EquippedHandler.fieldReady] then
@@ -55,7 +55,7 @@ throw.OnServerEvent:Connect(function(player: Player, rotation: Vector3)
     end
     if (fruitFill > 0) then
         fruitModule -= 1
-        fruitModule.Instantiate(player, hrp.Position, rotation)
+        fruitModule.Instantiate(id, player, hrp.Position, rotation)
     end
 
 end)

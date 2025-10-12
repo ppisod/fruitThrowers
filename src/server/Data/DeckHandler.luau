@@ -7,7 +7,7 @@ local m = {}
 m.deck = {} -- player = {cardSlot: ..., cardSlot: ..., cardSlot: ..., cardSlot......}
 
 m.defaultDeck = {
-    [Slots.slots.fruit1] = {Fruit.Fruits.None, 0},
+    [Slots.slots.fruit1] = {Fruit.Fruits.Watermelon, 3},
     [Slots.slots.fruit2] = {Fruit.Fruits.None, 0},
     [Slots.slots.fruit3] = {Fruit.Fruits.None, 0},
     [Slots.slots.fruit4] = {Fruit.Fruits.None, 0},

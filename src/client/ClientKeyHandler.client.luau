@@ -37,8 +37,9 @@ end
 function throw (actionName: string, inputState: Enum.UserInputState, inputObject: InputObject)
 
     if inputState == Enum.UserInputState.Begin then
-        throwEvent:FireServer(workspace.CurrentCamera.CFrame.LookVector);
-        InterceptKeys.THROWN(workspace.CurrentCamera.CFrame.LookVector);
+        local id =  Random.new():NextInteger(-1395728563, 130138941029)
+        throwEvent:FireServer(workspace.CurrentCamera.CFrame.LookVector, Random.new():NextInteger(-1395728563, 130138941029));
+        InterceptKeys.THROWN(workspace.CurrentCamera.CFrame.LookVector, id);
     end
 
 end
